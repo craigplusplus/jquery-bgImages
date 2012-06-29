@@ -1,0 +1,108 @@
+---
+layout: default
+title: bgImages Example
+---
+
+<script src='jquery.bgImages.js'></script>
+<script>
+	function runExample() {
+		var eg = $('#bgImages_example');
+		eg.bgImages({
+			add: $('input[name=add]:checked').attr('value'),
+			remove: $('input[name=remove]:checked').attr('value'),
+			tags: $('#tags').attr('value').split(','),
+			shift_tagged: $('input[name=shift_tagged]:checked').attr('value'),
+			left: $('#shiftx').attr('value'),
+			top: $('#shifty').attr('value'),
+			position: $('#position').attr('value'),
+			repeat: $('#repeat').attr('value')
+		});
+		//eg.html('My current styling is:<br />'+eg.attr('style'));
+	}
+</script>
+<body>
+
+<p>This is a simple example of the capabilities of the bgImages jQuery plugin.</p>
+<p>Images can be added, deleted, or tagged. Tagged images can have their position shifted by any given amount (so long as it is given in units matching their current position).</p>
+<p>View the code to get a handle on it, or view the <a href='jquery.bgImages.js'>plugin</a> itself for full documentation.</p>
+
+<div id="bgImages_example" class="example" style="background: url(images/leaf.png) 50% 50px no-repeat, url(images/star.jpg) 0px 0px no-repeat;"></div>
+<div>
+	<form class='simple_form'>
+	<ul>
+		
+		<li>
+		<input type='radio' id='add_star' name='add' value='images/star.jpg' />
+		<label for='add_star'>Add star.jpg</label>
+		</li>		
+
+		<li>
+		<input type='radio' id='add_leaf' name='add' value='images/leaf.png' />
+		<label for='add_leaf'>Add leaf.png</label>
+		</li>		
+		
+		<li>
+		<input type='radio' id='no_add' name='add' value='' />
+		<label for='no_add'>Do not add an image</label>
+		</li>		
+		
+		<li><label for='position'>Position new image at:</label>
+		<input type='text' id='position' name='position' value='10px 0px' />
+		</li>		
+		
+		<!-- Yeah, you can change this, too -->
+		<input type='hidden' id='repeat' name='repeat' value='no-repeat' />
+	
+		<li>
+		<input type='radio' id='del_star' name='remove' value='images/star.jpg' />
+		<label for='del_star'>Delete star.jpg</label>
+		</li>		
+		
+		<li>
+		<input type='radio' id='del_leaf' name='remove' value='images/leaf.png' />
+		<label for='del_leaf'>Delete leaf.png</label>
+		</li>		
+				
+		<li>
+		<input type='radio' id='del_png' name='remove' value='.png' />
+		<label for='del_png'>Delete all .pngs</label>
+		</li>		
+				
+		<li>
+		<input type='radio' id='del_jpg' name='remove' value='.jpg' />
+		<label for='del_jpg'>Delete all .jpgs</label>
+		</li>		
+				
+		<li>
+		<input type='radio' id='just_shift' name='remove' value='' />
+		<label for='just_shift'>Do not delete an image</label>
+		</li>		
+		
+		<li><label for='tags'>Tag images ending with:</label>
+		<input type='text' id='tags' name='tags' value='star.jpg' />
+		</li>		
+		
+		<li>
+		<input type='radio' id='shift_tagged' name='shift_tagged' value='true'/>
+		<label for='shift_tagged'>Shift tagged images</label>
+		</li>		
+		
+		<li>
+		<input type='radio' id='shift_tagged_no' name='shift_tagged' value='' />
+		<label for='shift_tagged_no'>Shift all images that aren't tagged</label>
+		</li>		
+		
+		<li><label for='shiftx'>Shift right by (px, em, %):</label>
+		<input type='text' id='shiftx' name='shiftx' value='5px' />
+		</li>		
+		
+		<li><label for='shiftx'>Shift down by (px, em, %):</label>
+		<input type='text' id='shifty' name='shifty' value='5px' />
+		</li>		
+		
+		<li><input type="button" onClick='runExample();' value="Try It" /></li>		
+
+	</ul>
+	</form>
+</div>
+
