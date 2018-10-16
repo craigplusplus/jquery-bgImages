@@ -1,4 +1,4 @@
-jQuery.bgImages.js
+jQuery.bgImages.js -- OBSOLETE
 ==================
 
 jQuery plugin to manage multiple background images for an element, as permitted by CSS3.
